@@ -9,7 +9,16 @@ A fun and engaging card game app for iOS where players predict how many hands th
 
 ## 📱 Screenshots
 
-*Screenshots coming soon*
+<div align="center">
+  <h3>Game View - Main Screen</h3>
+  <img src="screenshots/screenshot-game-view.png" alt="Game View" width="300"/>
+  
+  <h3>Boli Input - Declare Your Prediction</h3>
+  <img src="screenshots/screenshot-boli-input.png" alt="Boli Input" width="300"/>
+  
+  <h3>Edit Round - Modify Past Rounds</h3>
+  <img src="screenshots/screenshot-edit-round.png" alt="Edit Round" width="300"/>
+</div>
 
 ## 🎮 What is Bolu?
 
