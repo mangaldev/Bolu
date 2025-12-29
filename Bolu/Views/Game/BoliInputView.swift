@@ -58,32 +58,27 @@ struct BoliInputView: View {
                     Text("Round \(round.roundNumber) - \(round.cardsPerPlayer) cards per player")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
-                    
-                    // Combined question and counter in one line
-                    HStack {
-                        Text("How many hands will you win?")
-                            .font(.headline)
-                        
-                        Text("\(selectedBoli)")
-                            .font(.headline)
-                            .fontWeight(.bold)
-                            .foregroundColor(.blue)
-                            .frame(minWidth: 30)
-                    }
-                    .padding(.top)
                 }
                 
-                // Boli selector
-                VStack(spacing: 20) {
+                // Question with inline picker wheel
+                HStack(alignment: .center, spacing: 15) {
+                    Text("How many hands will you win?")
+                        .font(.headline)
+                    
+                    Spacer()
+                    
+                    // Inline picker wheel
                     Picker("Boli", selection: $selectedBoli) {
                         ForEach(0...round.cardsPerPlayer, id: \.self) { value in
                             Text("\(value)").tag(value)
                         }
                     }
                     .pickerStyle(.wheel)
-                    .frame(height: 150)
+                    .frame(width: 100, height: 120)
+                    .clipped()
                 }
-                .padding()
+                .padding(.horizontal)
+                .padding(.top, 20)
                 
                 Button("Confirm Boli") {
                     viewModel.declareBoli(playerId: currentPlayer.id, boli: selectedBoli)
